@@ -4,7 +4,6 @@ import PublicView from "../PublicView.vue";
 import { mount, VueWrapper } from "@vue/test-utils";
 import { nextTick, ref } from "vue";
 import { useCarsQuery } from "@/queries/cars";
-import { useBookingsQuery } from "@/queries/bookings.ts";
 import { beforeEach } from "vitest";
 import { setActivePinia, type Pinia } from "pinia";
 import { createTestingPinia } from "@pinia/testing";

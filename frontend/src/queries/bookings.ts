@@ -7,7 +7,7 @@ export const useBookingsQuery = defineQuery(() => {
   const authStore = useAuthStore();
   const { token } = storeToRefs(authStore);
 
-  const { data: bookings, isLoading, error, ...rest } = useQuery({
+  const { data: bookings, isLoading, error, refresh } = useQuery({
     key: ["bookings"],
     query: async () => {
       const res = await fetch(`${import.meta.env.VITE_APP_API_URL}/api/admin/bookings`, {
@@ -20,5 +20,5 @@ export const useBookingsQuery = defineQuery(() => {
     //placeholderData: () => [],
   });
 
-  return { bookings, bookingsLoading: isLoading, bookingsError: error };
+  return { bookings, bookingsLoading: isLoading, bookingsError: error, refresh };
 });

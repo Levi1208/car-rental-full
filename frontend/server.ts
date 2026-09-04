@@ -7,6 +7,10 @@ import path from "node:path";
 import { fakerHU as faker } from "@faker-js/faker";
 import { differenceInCalendarDays } from "date-fns";
 
+function dateRangesOverlap(fromA: string, toA: string, fromB: string, toB: string): boolean {
+  return fromA <= toB && toA >= fromB;
+}
+
 const app = express();
 
 app.use(express.json());

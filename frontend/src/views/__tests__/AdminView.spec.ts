@@ -48,6 +48,7 @@ describe("AdminView", () => {
       bookings: ref([]),
       bookingsLoading: ref(false),
       bookingsError: ref(null),
+      refresh: () => {throw new Error("mocked")},
     });
 
     wrapper = mount(AdminView, {

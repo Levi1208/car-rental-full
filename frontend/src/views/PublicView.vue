@@ -6,9 +6,6 @@ import { useSearchStore } from "@/stores/search";
 import { useCarsQuery } from "@/queries/cars";
 import { useBookingsQuery } from "@/queries/bookings";
 
-/* const carsStore = useCarsStore();
-const { cars, carsLoading, carsError } = storeToRefs(carsStore); */
-
 const { cars, carsLoading, carsError } = useCarsQuery();
 
 //const { bookings, bookingsLoading, bookingsError } = useBookingsQuery();

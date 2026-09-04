@@ -29,7 +29,6 @@ const mockCars = {
 
 vi.stubEnv("VITE_APP_API_URL", "");
 
-// TODO
 describe("Cars Query", () => {
   beforeEach(() => {
     const pinia = createPinia();
