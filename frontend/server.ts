@@ -1,5 +1,5 @@
-import type { BookingFull } from "@/stores/Booking";
-import type { Car } from "@/stores/Car";
+import type { BookingFull } from "./src/stores/Booking";
+import type { Car } from "./src/stores/Car";
 import express, { type Request } from "express";
 import fs from "node:fs/promises"
 import path from "node:path";
