@@ -24,7 +24,7 @@ describe("Alerts Store", () => {
     const alertsStore = useAlertsStore();
     alertsStore.alerts = [{id: 1, type: "success", message: "Siker"}];
 
-    alertsStore.removeAlert("test-id");
+    alertsStore.removeAlert(1);
 
     expect(alertsStore.alerts.some(alert => alert.id === 1)).toBe(false);
   });
