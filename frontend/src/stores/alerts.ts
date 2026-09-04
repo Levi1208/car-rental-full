@@ -22,7 +22,7 @@ export const useAlertsStore = defineStore("alerts", () => {
     return id;
   }
 
-  function removeAlert(id: id) {
+  function removeAlert(id: number) {
     alerts.value.splice(alerts.value.findIndex(a => a.id === id), 1);
   }
 
