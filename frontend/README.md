@@ -1,5 +1,13 @@
 # Egyszerű autókölcsönző alkalmazás
 
+## Használat
+
+- `npm install`
+- `npm run build`
+- `npm run preview`
+
+---
+
 ## Publikus felület
 
 A felületen lehetőség van keresni az autók között: a daterange picker használatával a kiválasztott időtartamra még foglalható autókat tudjuk szűrni.

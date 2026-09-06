@@ -3,19 +3,21 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
-import mockApp from "./server";
+//import mockApp from "./__server";
 
 // https://vite.dev/config/
+
 export default defineConfig({
   plugins: [
     vue(),
     vueDevTools(),
-    {
+    /* {
       name: "mock-api-plugin",
+      apply: () => process.env.npm_lifecycle_event === "dev-mock-server",
       configureServer(server) {
         server.middlewares.use("/api", mockApp);
       }
-    },
+    } */
   ],
   resolve: {
     alias: {
@@ -24,4 +26,4 @@ export default defineConfig({
   },
 })
 
-//console.log("Script lifecycle event per package.json:", process.env.npm_lifecycle_event)
+//console.log("Script lifecycle event:", process.env.npm_lifecycle_event)

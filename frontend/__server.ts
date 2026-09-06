@@ -15,6 +15,10 @@ const app = express();
 
 app.use(express.json());
 
+console.log("\x1b[34mRunning mock server");
+
+// --------
+
 const MOCK_ADMIN_TOKEN = "mock-admin-token";
 
 
