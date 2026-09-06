@@ -60,7 +60,6 @@ app.get("/cars", async (_, response) => {
   response.status(200).json(cars);
 });
 
-// TODO !!
 app.get("admin/bookings", async (request, response) => {
   response.status(200).json(bookings);
 });

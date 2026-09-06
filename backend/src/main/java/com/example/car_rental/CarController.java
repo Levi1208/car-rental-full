@@ -41,13 +41,12 @@ public class CarController {
         return CarResponse.fromEntity(carRentalService.createCar(request));
     }
     
-    @PutMapping("admin/cars/{id}")
+    @PutMapping("/admin/cars/{id}")
     public CarResponse updateCar(@PathVariable Long id, @Valid @RequestBody CarCreateOrUpdateRequest request) {
         return CarResponse.fromEntity(carRentalService.updateCar(id, request));
     }
 
-    // TODO
-    @PutMapping("admin/cars/{id}/status")
+    @PutMapping("/admin/cars/{id}/status")
     public CarResponse setCarStatus(@PathVariable Long id, @Valid @RequestBody CarStatusChangeRequest request) {
         return CarResponse.fromEntity(carRentalService.updateCarStatus(id, request));
     }

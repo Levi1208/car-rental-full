@@ -3,6 +3,7 @@ import CarCard from "@/components/CarCard.vue";
 import { useCreateCarMutation } from "@/mutations/createCar";
 import { useEditCarMutation } from "@/mutations/editCar";
 import { useCarsQuery } from "@/queries/cars";
+import { useAlertsStore } from "@/stores/alerts";
 import type { Car } from "@/stores/Car";
 import { ref, watch, type Ref } from "vue";
 import { useRoute } from "vue-router";
@@ -12,12 +13,14 @@ const { create = false } = defineProps<{create: boolean}>()
 const id: string = useRoute().params.id as string ?? "-1";
 const { cars, carsLoading, carsError } = useCarsQuery();
 
+const { addAlert } = useAlertsStore();
+
 const { mutateAsync: editCar, selectedCarID } = useEditCarMutation();
 const { mutateAsync: createCar } = useCreateCarMutation();
 
 const formBase = {brand: "", model: "", passengers: 0, daily_price_huf: 0, image: "", enabled: false};
 
-type FormCar = Omit<Car, "id">;
+type FormCar = Omit<Car, "id"> & {id?: number};
 const formCar: Ref<FormCar> = create ? ref<FormCar>(formBase) : ref(cars.value?.[id] ? {...cars.value[id]} : formBase);
 
 const wasEnabled = formCar.value.enabled;
@@ -28,12 +31,14 @@ async function submitHandler() {
     if (create) {
       res = createCar(formCar.value);
     } else {
+      delete formCar.value.id;
       selectedCarID.value = Number(id);
       res = editCar(formCar.value);
     }
     await res;
+    addAlert({type: "success", message: `Az autó ${create ? "létrehozása" : "szerkesztése"} sikeres.`});
   } catch (err) {
-
+    addAlert({type: "danger", message: "A művelet sikertelen."});
   }
 }
 

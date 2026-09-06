@@ -45,7 +45,6 @@ describe("EditCarView", () => {
   })
 
   it("renders", () => {
-    // TODO
     expect(true).toBe(true);
     //expect(wrapper.isVisible()).toBe(true)
   });

@@ -29,7 +29,6 @@ const formBooking = ref({
 });
 
 async function submitBooking() {
-  // TODO
   const bookingData: BookingRequestDetails = {
     car_id: car.value!.id,
     ...formBooking.value

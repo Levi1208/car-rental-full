@@ -59,7 +59,7 @@ onUnmounted(() => {
         <h2>{{ group.name }}</h2>
         <ul id="bookings" class="list-unstyled row g-1 g-sm-3">
           <li v-for="(booking, index) in group.bookings" :key="index" class="col-6 col-lg-4 col-xl-3 col-xxl-2 d-flex flex-column gap-1">
-            <BookingInfo v-bind="{booking: {name: '', email: '', address: '', phone: '', total_price: 0, ...booking}}" /> <!-- TODO !! -->
+            <BookingInfo v-bind="{booking: {name: '', email: '', address: '', phone: '', total_price: 0, ...booking}}" />
           </li>
         </ul>
       </div>

@@ -58,6 +58,8 @@ A végpontokhoz admin jogosultság szükséges (headerben `Authorization: Bearer
 
 ## Használat:
 
+JDK 25 szükséges.
+
 Az `application.properties` fájl nyomán az alkalmazás alapértelmezetten egy PostgreSQL adatbázishoz próbál csatlakozni egy `car_rental` nevű adatbázishoz `car_rental_user` felhasználónévvel és `car_rental_user_password` jelszóval, ennek előkészítése lehet például:
 
 ```sql
@@ -67,4 +69,4 @@ GRANT ALL PRIVILEGES ON DATABASE car_rental TO car_rental_user;
 GRANT ALL ON SCHEMA public TO car_rental_user;
 ```
 
-Futtatás: ./mvnw spring-boot:run
+Futtatás: `./mvnw spring-boot:run`

@@ -19,8 +19,8 @@ async function loginHandler() {
     router.push({name: "admin"});
     addAlert({type: "success", message: "Sikeres bejelentkezés!"});
   } catch (err) {
-    console.debug(`${err}`); // TODO
-    addAlert({type: "danger", message: "Sikertelen bejelentkezés!"});
+    console.debug(`${err}`);
+    addAlert({type: "danger", message: "Sikertelen bejelentkezés."});
   }
 }
 

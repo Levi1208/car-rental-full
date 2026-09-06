@@ -37,7 +37,6 @@ public class DataSeeder implements CommandLineRunner {
         }
 
         if (bookingRepository.count() == 0) {
-            // TODO
 
             Faker faker = new Faker(Locale.of("hu"));
 

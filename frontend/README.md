@@ -2,6 +2,8 @@
 
 ## Használat
 
+Node.js szükséges
+
 - `npm install`
 - `npm run build`
 - `npm run preview`
