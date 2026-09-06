@@ -34,7 +34,7 @@ A foglalás várható teljes összegét is láthatjuk. A gombbal tudjuk véglege
 
 A megfelelő felhasználónév és jelszó megadása esetén a belépés gombra kattintva használhatjuk az admin felületet.
 
-## Admin felület
+## Admin felület (`/admin`)
 
 Az admin felületen minimális adminisztrációs tevékenységek folytathatók.
 
